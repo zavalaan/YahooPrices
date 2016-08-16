@@ -3,7 +3,7 @@
 Yahoo finance .NET API library to retrieve stock price information. 
 
 ## From C#
-```
+```csharp
 var prices = CSharpInterop.GetPriceRangeAsync(
     "MSFT",
     new DateTime(2016, 8, 8), new DateTime(2016, 8, 12),
@@ -18,12 +18,12 @@ foreach (var price in prices)
 ## From F#
 
 Retrieve MSFT price on 8/12
-```
+```fsharp
 let price = Prices.asyncGetOnePrice "MSFT" (DateTime(2016,8,8)) |> Async.RunSynchronously
 ```
 
 Retrieve all MSFT prices from 8/8 to 8/12
-```
+```fsharp
 let prices = 
     Prices.asyncGetRangePrices "MSFT" (DateTime(2016,8,8)) (DateTime(2016, 8, 13)) AdjustedForDividendsAndSplits
     |> Async.RunSynchronously
